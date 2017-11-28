@@ -5,7 +5,7 @@ class App extends React.Component {
     return(
       <div className="container">
         <h1><i className="material-icons">check_circle</i> Cool buddy!</h1>
-        <p>Your project is booted successfully.</p>
+        <p>Your project is booted successfully!</p>
       </div>
     )
   }
