@@ -5,18 +5,18 @@ Handmade boilerplate for quickly firing a React JS project.
 ## Features
 * Compiles SASS to CSS
 * Compress all assets
-* Supports SVG, PNG, JPG, TTF, WOFF and WOFF2
+* Supports all SVG, PNG, JPG, TTF, WOFF and WOFF2 formats.
 
 
 ## Installation
 
-1. Just clone this project in to a ```new-folder``` by using the command below:
+1. Just clone this project in to a ```new-folder```
 
 ```
 git clone https://github.com/sivadass/react-quickstart.git new-folder
 ```
 
-2. Now get inside the ```new-folder``` by
+2. Now get inside the ```new-folder``` 
 ```
 cd new-folder
 ```
