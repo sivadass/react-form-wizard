@@ -2,6 +2,12 @@
 
 Handmade boilerplate for quickly firing a React JS project.
 
+## Features
+* Compiles SASS to CSS
+* Compress all assets
+* Supports SVG, PNG, JPG, TTF, WOFF and WOFF2
+
+
 ## Installation
 
 1. Just clone this project in to a ```new-folder``` by using the command below:
