@@ -26734,9 +26734,14 @@ var HomeLayout = function (_React$Component) {
           'main',
           null,
           _react2.default.createElement(
+            'h1',
+            null,
+            'Follow the steps'
+          ),
+          _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/step-one', exact: true, component: _stepOne2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/step-one', component: _stepOne2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/step-two', component: _stepTwo2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/step-three', component: _stepThree2.default })
           )

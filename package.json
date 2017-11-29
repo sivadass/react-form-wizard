@@ -1,7 +1,7 @@
 {
   "name": "react-form-wizard",
   "version": "1.0.0",
-  "description": "Form wizard component built for Recat JS",
+  "description": "Form wizard component built for React JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
