@@ -1,3 +1,26 @@
 .container{
   padding: 16px;
 }
+
+nav{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  a{
+    display: block;
+    color: #4099ff;
+    margin: 0 8px;
+    border: 1px solid #4099ff;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 18px;
+    font-size: 18px;
+    box-sizing: content-box;
+    &.active{
+      background: #4099ff;
+      color: #fff;
+    }
+  }
+}

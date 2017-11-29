@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
+  "name": "react-form-wizard",
   "version": "1.0.0",
-  "description": "Handmade boilerplate for quickly firing a React JS project",
+  "description": "Form wizard component built for Recat JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,13 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sivadass/react-quickstart"
+    "url": "https://github.com/sivadass/react-form-wizard"
   },
   "author": "Sivadass N",
   "license": "MIT",
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
