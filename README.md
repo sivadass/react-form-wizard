@@ -21,11 +21,14 @@ git clone https://github.com/sivadass/react-quickstart.git new-folder
 cd new-folder
 ```
 
-3. Fireup webpack by
+3. Fireup webpack dev server by
 ```
-webpack
+webpack-dev-server
 ```
-
+  or
+```
+npm run start:dev
+```
 4. For production build
 ```
 webpack -p
