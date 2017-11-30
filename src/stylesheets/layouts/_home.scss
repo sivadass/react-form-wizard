@@ -24,3 +24,36 @@ nav{
     }
   }
 }
+
+.wizard-container{
+  max-width: 640px;
+  margin: 0 auto;
+}
+.wizard-title{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #999;
+}
+.wizard-navigation{
+  display: flex;
+  justify-content: space-between;
+  .prev-step,
+  .next-step{
+    line-height: 44px;
+    box-sizing: content-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-weight: 700;
+    i{
+      line-height: 42px;
+      vertical-align: middle;
+    }
+  }
+  .next-step{
+    color: #fff;
+    border-color: transparent;
+    background: #4099ff;
+  }
+}

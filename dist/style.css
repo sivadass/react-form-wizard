@@ -21,6 +21,7 @@ h4 {
 input[type="text"],
 input[type="number"],
 input[type="password"],
+input[type="email"],
 select,
 textarea {
   font-family: inherit;
@@ -31,6 +32,8 @@ textarea {
   input[type="number"]:active,
   input[type="password"]:focus,
   input[type="password"]:active,
+  input[type="email"]:focus,
+  input[type="email"]:active,
   select:focus,
   select:active,
   textarea:focus,
@@ -332,5 +335,35 @@ nav {
     nav a.active {
       background: #4099ff;
       color: #fff; }
+
+.wizard-container {
+  max-width: 640px;
+  margin: 0 auto; }
+
+.wizard-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #999; }
+
+.wizard-navigation {
+  display: flex;
+  justify-content: space-between; }
+  .wizard-navigation .prev-step,
+  .wizard-navigation .next-step {
+    line-height: 44px;
+    box-sizing: content-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-weight: 700; }
+    .wizard-navigation .prev-step i,
+    .wizard-navigation .next-step i {
+      line-height: 42px;
+      vertical-align: middle; }
+  .wizard-navigation .next-step {
+    color: #fff;
+    border-color: transparent;
+    background: #4099ff; }
 
 /*# sourceMappingURL=style.css.map*/

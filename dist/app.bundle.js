@@ -12581,6 +12581,8 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(98);
+
 var _Input = __webpack_require__(275);
 
 var _Input2 = _interopRequireDefault(_Input);
@@ -12607,11 +12609,42 @@ var StepOne = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container' },
+        { className: 'wizard-container' },
+        _react2.default.createElement(
+          'h2',
+          { className: 'wizard-title' },
+          'Your contact information'
+        ),
         _react2.default.createElement(
           'div',
-          { className: 'form-group' },
-          _react2.default.createElement(_Input2.default, { type: 'email' })
+          { className: 'wizard-field' },
+          _react2.default.createElement(_Input2.default, { type: 'text', placeholder: 'Full Name' }),
+          _react2.default.createElement(_Input2.default, { type: 'email', placeholder: 'Email Address' }),
+          _react2.default.createElement(_Input2.default, { type: 'number', placeholder: 'Phone Number' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'wizard-navigation' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-two', className: 'prev-step' },
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_left'
+            ),
+            ' Return Back'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-two', className: 'next-step' },
+            'Proceed Next ',
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_right'
+            )
+          )
         )
       );
     }
@@ -12639,6 +12672,12 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(98);
+
+var _Input = __webpack_require__(275);
+
+var _Input2 = _interopRequireDefault(_Input);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12657,15 +12696,46 @@ var StepTwo = function (_React$Component) {
   }
 
   _createClass(StepTwo, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "container" },
+        'div',
+        { className: 'wizard-container' },
         _react2.default.createElement(
-          "h1",
-          null,
-          "Step 2"
+          'h2',
+          { className: 'wizard-title' },
+          'Your '
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'wizard-field' },
+          _react2.default.createElement(_Input2.default, { type: 'text', placeholder: 'Full Name' }),
+          _react2.default.createElement(_Input2.default, { type: 'email', placeholder: 'Email Address' }),
+          _react2.default.createElement(_Input2.default, { type: 'number', placeholder: 'Phone Number' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'wizard-navigation' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-two', className: 'prev-step' },
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_left'
+            ),
+            ' Return Back'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-two', className: 'next-step' },
+            'Proceed Next ',
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_right'
+            )
+          )
         )
       );
     }
@@ -12693,6 +12763,12 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(98);
+
+var _Input = __webpack_require__(275);
+
+var _Input2 = _interopRequireDefault(_Input);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12711,15 +12787,46 @@ var StepThree = function (_React$Component) {
   }
 
   _createClass(StepThree, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "container" },
+        'div',
+        { className: 'wizard-container' },
         _react2.default.createElement(
-          "h1",
-          null,
-          "Step 3"
+          'h2',
+          { className: 'wizard-title' },
+          'Your '
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'wizard-field' },
+          _react2.default.createElement(_Input2.default, { type: 'text', placeholder: 'Full Name' }),
+          _react2.default.createElement(_Input2.default, { type: 'email', placeholder: 'Email Address' }),
+          _react2.default.createElement(_Input2.default, { type: 'number', placeholder: 'Phone Number' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'wizard-navigation' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-two', className: 'prev-step' },
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_left'
+            ),
+            ' Return Back'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-two', className: 'next-step' },
+            'Proceed Next ',
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_right'
+            )
+          )
         )
       );
     }
@@ -29069,11 +29176,6 @@ var HomeLayout = function (_React$Component) {
           'main',
           null,
           _react2.default.createElement(
-            'h1',
-            null,
-            'Follow the steps'
-          ),
-          _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
             _react2.default.createElement(_reactRouterDom.Route, { path: '/step-one', component: _stepOne2.default }),
@@ -29118,21 +29220,38 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Input = function (_React$Component) {
   _inherits(Input, _React$Component);
 
-  function Input() {
+  function Input(props) {
     _classCallCheck(this, Input);
 
-    return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
+
+    _this.state = {
+      value: ""
+    };
+    return _this;
   }
 
   _createClass(Input, [{
-    key: 'handleChange',
-    value: function handleChange() {
-      console.log('hi...');
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        value: e.target.value
+      });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
-      return _react2.default.createElement('input', { type: this.props.type, onChange: this.handleChange.bind(this) });
+      return _react2.default.createElement(
+        "div",
+        { className: "form-group" },
+        _react2.default.createElement("input", {
+          type: this.props.type,
+          onChange: this.handleChange.bind(this),
+          value: this.state.value,
+          placeholder: this.props.placeholder,
+          className: "form-control"
+        })
+      );
     }
   }]);
 

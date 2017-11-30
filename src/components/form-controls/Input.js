@@ -1,12 +1,28 @@
 import React from 'react';
 
 class Input extends React.Component {
-  handleChange(){
-    console.log('hi...');
+  constructor(props){
+    super(props);
+    this.state = {
+      value: ""
+    }
+  }
+  handleChange(e){
+    this.setState({
+      value: e.target.value
+    })
   }
   render(){
     return(
-      <input type={this.props.type}  onChange={this.handleChange.bind(this)}/>
+      <div className="form-group">
+        <input 
+          type={this.props.type} 
+          onChange={this.handleChange.bind(this)}
+          value={this.state.value}
+          placeholder={this.props.placeholder}
+          className="form-control"
+        />
+      </div>
     )
   }
 }

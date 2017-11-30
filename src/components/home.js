@@ -16,7 +16,6 @@ class HomeLayout extends React.Component {
           </nav>
         </header>
         <main>
-          <h1>Follow the steps</h1>
           <Switch> 
             <Route path="/step-one" component={StepOne} />
             <Route path="/step-two" component={StepTwo} />
