@@ -8,13 +8,13 @@ class StepThree extends React.Component {
       <div className="wizard-container">
         <h2 className="wizard-title">Your </h2>
         <div className="wizard-field">
-          <Input type="text" placeholder="Full Name" />
-          <Input type="email" placeholder="Email Address" />
-          <Input type="number" placeholder="Phone Number" />
+          <Input type="text" placeholder="Total years of experience" />
+          <Input type="text" placeholder="Last company name" />
+          <Input type="text" placeholder="Role in the last company" />
         </div>
         <div className="wizard-navigation">
           <Link to="/step-two" className="prev-step"><i className="material-icons">keyboard_arrow_left</i> Return Back</Link>
-          <Link to="/step-two" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
+          <Link to="/step-one" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
         </div>
       </div>
     )

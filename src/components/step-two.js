@@ -14,7 +14,7 @@ class StepTwo extends React.Component {
         </div>
         <div className="wizard-navigation">
           <Link to="/step-two" className="prev-step"><i className="material-icons">keyboard_arrow_left</i> Return Back</Link>
-          <Link to="/step-two" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
+          <Link to="/step-three" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
         </div>
       </div>
     )

@@ -13,7 +13,7 @@ class StepOne extends React.Component {
           <Input type="number" placeholder="Phone Number" />
         </div>
         <div className="wizard-navigation">
-          <Link to="/step-two" className="prev-step"><i className="material-icons">keyboard_arrow_left</i> Return Back</Link>
+          <Link to="/" className="prev-step"><i className="material-icons">keyboard_arrow_left</i> Return Back</Link>
           <Link to="/step-two" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
         </div>
       </div>
