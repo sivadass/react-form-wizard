@@ -12746,6 +12746,10 @@ var _Input = __webpack_require__(67);
 
 var _Input2 = _interopRequireDefault(_Input);
 
+var _Select = __webpack_require__(282);
+
+var _Select2 = _interopRequireDefault(_Select);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12772,21 +12776,75 @@ var StepTwo = function (_React$Component) {
         _react2.default.createElement(
           'h2',
           { className: 'wizard-title' },
-          'Your '
+          'Your Location'
         ),
         _react2.default.createElement(
           'div',
           { className: 'wizard-field' },
-          _react2.default.createElement(_Input2.default, { type: 'text', placeholder: 'Full Name' }),
-          _react2.default.createElement(_Input2.default, { type: 'email', placeholder: 'Email Address' }),
-          _react2.default.createElement(_Input2.default, { type: 'number', placeholder: 'Phone Number' })
+          _react2.default.createElement(
+            _Select2.default,
+            { type: 'text', placeholder: 'Choose Country' },
+            _react2.default.createElement(
+              'option',
+              { value: 'chennai' },
+              'India'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'bangalore' },
+              'China'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'hyderabad' },
+              'Sri Lanka'
+            )
+          ),
+          _react2.default.createElement(
+            _Select2.default,
+            { type: 'text', placeholder: 'Choose State' },
+            _react2.default.createElement(
+              'option',
+              { value: 'chennai' },
+              'Tanil Nadu'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'bangalore' },
+              'Karnataka'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'hyderabad' },
+              'Telangana'
+            )
+          ),
+          _react2.default.createElement(
+            _Select2.default,
+            { type: 'text', placeholder: 'Choose City' },
+            _react2.default.createElement(
+              'option',
+              { value: 'chennai' },
+              'Chennai'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'bangalore' },
+              'Bengalore'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'hyderabad' },
+              'Hyderabad'
+            )
+          )
         ),
         _react2.default.createElement(
           'div',
           { className: 'wizard-navigation' },
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/step-two', className: 'prev-step' },
+            { to: '/step-one', className: 'prev-step' },
             _react2.default.createElement(
               'i',
               { className: 'material-icons' },
@@ -12863,7 +12921,7 @@ var StepThree = function (_React$Component) {
         _react2.default.createElement(
           'h2',
           { className: 'wizard-title' },
-          'Your '
+          'Your Work Experience'
         ),
         _react2.default.createElement(
           'div',
@@ -29259,6 +29317,88 @@ var HomeLayout = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = HomeLayout;
+
+/***/ }),
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Select = function (_React$Component) {
+  _inherits(Select, _React$Component);
+
+  function Select(props) {
+    _classCallCheck(this, Select);
+
+    var _this = _possibleConstructorReturn(this, (Select.__proto__ || Object.getPrototypeOf(Select)).call(this, props));
+
+    _this.state = {
+      value: ""
+    };
+    return _this;
+  }
+
+  _createClass(Select, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        value: e.target.value
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "form-group" },
+        _react2.default.createElement(
+          "select",
+          {
+            onChange: this.handleChange.bind(this),
+            value: this.state.value,
+            className: "form-control",
+            defaultValue: this.props.placeholder
+          },
+          _react2.default.createElement(
+            "option",
+            { "default": true, hidden: true },
+            this.props.placeholder
+          ),
+          this.props.children
+        )
+      );
+    }
+  }]);
+
+  return Select;
+}(_react2.default.Component);
+
+exports.default = Select;
 
 /***/ })
 /******/ ]);

@@ -6,7 +6,7 @@ class StepThree extends React.Component {
   render(){
     return(
       <div className="wizard-container">
-        <h2 className="wizard-title">Your </h2>
+        <h2 className="wizard-title">Your Work Experience</h2>
         <div className="wizard-field">
           <Input type="text" placeholder="Total years of experience" />
           <Input type="text" placeholder="Last company name" />
