@@ -29252,6 +29252,10 @@ var _stepThree = __webpack_require__(119);
 
 var _stepThree2 = _interopRequireDefault(_stepThree);
 
+var _stepFour = __webpack_require__(283);
+
+var _stepFour2 = _interopRequireDefault(_stepFour);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29295,6 +29299,11 @@ var HomeLayout = function (_React$Component) {
               _reactRouterDom.NavLink,
               { to: '/step-three', activeClassName: 'active' },
               '3'
+            ),
+            _react2.default.createElement(
+              _reactRouterDom.NavLink,
+              { to: '/step-four', activeClassName: 'active' },
+              '4'
             )
           )
         ),
@@ -29304,9 +29313,10 @@ var HomeLayout = function (_React$Component) {
           _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/step-one', component: _stepOne2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/step-one', component: _stepOne2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/step-two', component: _stepTwo2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/step-three', component: _stepThree2.default })
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/step-three', component: _stepThree2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/step-four', component: _stepFour2.default })
           )
         )
       );
@@ -29399,6 +29409,95 @@ var Select = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Select;
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(28);
+
+var _Input = __webpack_require__(67);
+
+var _Input2 = _interopRequireDefault(_Input);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var StepFour = function (_React$Component) {
+  _inherits(StepFour, _React$Component);
+
+  function StepFour() {
+    _classCallCheck(this, StepFour);
+
+    return _possibleConstructorReturn(this, (StepFour.__proto__ || Object.getPrototypeOf(StepFour)).apply(this, arguments));
+  }
+
+  _createClass(StepFour, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'wizard-container' },
+        _react2.default.createElement(
+          'h2',
+          { className: 'wizard-title' },
+          'Your Location'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'wizard-field' },
+          _react2.default.createElement(_Input2.default, { type: 'text', placeholder: 'Total years of experience' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'wizard-navigation' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-three', className: 'prev-step' },
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_left'
+            ),
+            ' Return Back'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/step-four', className: 'next-step' },
+            'Proceed Next ',
+            _react2.default.createElement(
+              'i',
+              { className: 'material-icons' },
+              'keyboard_arrow_right'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return StepFour;
+}(_react2.default.Component);
+
+exports.default = StepFour;
 
 /***/ })
 /******/ ]);
