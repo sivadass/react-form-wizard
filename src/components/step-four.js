@@ -8,11 +8,14 @@ class StepFour extends React.Component {
       <div className="wizard-container">
         <h2 className="wizard-title">Your Location</h2>
         <div className="wizard-field">
-        <Input type="text" placeholder="Total years of experience" />
+          <div style={{display: 'flex'}}>
+            <Input type="text" placeholder="Total years of experience" />
+            <button style={{width: '64px', fontSize: '20px'}} className="remove">&times;</button>
+          </div>
         </div>
         <div className="wizard-navigation">
           <Link to="/step-three" className="prev-step"><i className="material-icons">keyboard_arrow_left</i> Return Back</Link>
-          <Link to="/step-four" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
+          <Link to="/step-one" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
         </div>
       </div>
     )

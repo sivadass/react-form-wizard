@@ -12945,7 +12945,7 @@ var StepThree = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/step-one', className: 'next-step' },
+            { to: '/step-four', className: 'next-step' },
             'Proceed Next ',
             _react2.default.createElement(
               'i',
@@ -29464,7 +29464,16 @@ var StepFour = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'wizard-field' },
-          _react2.default.createElement(_Input2.default, { type: 'text', placeholder: 'Total years of experience' })
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex' } },
+            _react2.default.createElement(_Input2.default, { type: 'text', placeholder: 'Total years of experience' }),
+            _react2.default.createElement(
+              'button',
+              { style: { width: '64px', fontSize: '20px' }, className: 'remove' },
+              '\xD7'
+            )
+          )
         ),
         _react2.default.createElement(
           'div',
@@ -29481,7 +29490,7 @@ var StepFour = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/step-four', className: 'next-step' },
+            { to: '/step-one', className: 'next-step' },
             'Proceed Next ',
             _react2.default.createElement(
               'i',
