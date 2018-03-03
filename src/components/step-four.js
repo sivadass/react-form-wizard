@@ -1,16 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Input from './form-controls/Input'
-
-const DynamicFieldItem = (props) => {
-  console.log(props);
-  return(
-    <div className="dynamic-field-item">
-      <Input defaultValue={props.value} type="text" placeholder="Total years of experience" />
-      <button className="remove">&times;</button>
-    </div>
-  )
-}
+import DynamicFieldItem from './form-controls/dynamic-field-item'
+import uuid from 'uuid/v1';
 
 class StepFour extends React.Component {
   constructor(props){
@@ -18,31 +10,54 @@ class StepFour extends React.Component {
     this.state = {
       fields: [
         {
-          id: 1,
+          id: uuid(),
           value: "Apple"
         },
         {
-          id: 2,
+          id: uuid(),
           value: "Mango"
         },
         {
-          id: 3,
+          id: uuid(),
           value: "Orange"
+        },
+        {
+          id: uuid(),
+          value: "Grapes"
         }
       ]
     }
   }
-
+  handleRemove = (id) => {
+    console.log(id);
+  }
+  handleAdd = (value) => {
+    console.log('ok')
+    value = "";
+    let item = {
+      id: uuid(),
+      value: value
+    }
+    let array = this.state.fields.push(item);
+    this.setState({
+      fields: array
+    })
+  }
   render(){
     return(
       <div className="wizard-container">
         <h2 className="wizard-title">Add your own information</h2>
         <div className="wizard-field">
           {this.state.fields.map((item) => {
-            return <DynamicFieldItem key={item.id} value={item.value}/>
+            return <DynamicFieldItem 
+              key={item.id} 
+              id={item.id}
+              value={item.value} 
+              handleRemove={this.handleRemove}
+            />
           })}
         </div>
-        <button className="add-more">Add more</button>
+        <button className="add-more" onClick={this.handleAdd}>Add more</button>
       </div>
     )
   }

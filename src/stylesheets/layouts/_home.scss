@@ -59,9 +59,9 @@ nav{
 }
 
 // Dynamic form styles
-.dynamic-field-item{
+.dynamic-field-group{
   display: flex;
-  .form-group{
+  .form-control{
     flex-grow: 1
   }
   .remove{

@@ -367,16 +367,16 @@ nav {
     border-color: transparent;
     background: #4099ff; }
 
-.dynamic-field-item {
+.dynamic-field-group {
   display: flex; }
-  .dynamic-field-item .form-group {
+  .dynamic-field-group .form-control {
     flex-grow: 1; }
-  .dynamic-field-item .remove {
+  .dynamic-field-group .remove {
     width: 48px;
     margin-left: 16px;
     font-size: 22px;
     line-height: 42px; }
-    .dynamic-field-item .remove:hover {
+    .dynamic-field-group .remove:hover {
       background: indianred;
       color: white;
       border-color: transparent; }
