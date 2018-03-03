@@ -29,24 +29,40 @@ class StepFour extends React.Component {
     }
   }
   handleRemove = (id) => {
-    console.log(id);
+    let array = this.state.fields;
+		let index = array.findIndex((x => x.id == id));
+		array.splice(index, 1);
+		this.setState({
+			fields: array
+		})
   }
-  handleAdd = (value) => {
-    console.log('ok')
-    value = "";
-    let item = {
+  handleAdd = () => {
+    let item = [{
       id: uuid(),
-      value: value
-    }
-    let array = this.state.fields.push(item);
+      value: ""
+    }]
+    let array = this.state.fields.concat(item);
     this.setState({
       fields: array
     })
+  }
+  handleUpdate = (id, value) => {
+    let array = this.state.fields;
+		let index = array.findIndex((x => x.id == id));
+		array[index].value = value
+		this.setState({
+			fields: array
+		})
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.fields);
   }
   render(){
     return(
       <div className="wizard-container">
         <h2 className="wizard-title">Add your own information</h2>
+        <form onSubmit={this.handleSubmit}>
         <div className="wizard-field">
           {this.state.fields.map((item) => {
             return <DynamicFieldItem 
@@ -54,10 +70,13 @@ class StepFour extends React.Component {
               id={item.id}
               value={item.value} 
               handleRemove={this.handleRemove}
+              handleUpdate={this.handleUpdate}
             />
           })}
         </div>
         <button className="add-more" onClick={this.handleAdd}>Add more</button>
+        <button className="submit" onClick={this.handleSubmit}>Submit</button>
+        </form>
       </div>
     )
   }

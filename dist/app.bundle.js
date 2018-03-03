@@ -29453,20 +29453,41 @@ var StepFour = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (StepFour.__proto__ || Object.getPrototypeOf(StepFour)).call(this, props));
 
     _this.handleRemove = function (id) {
-      console.log(id);
-    };
-
-    _this.handleAdd = function (value) {
-      console.log('ok');
-      value = "";
-      var item = {
-        id: (0, _v2.default)(),
-        value: value
-      };
-      var array = _this.state.fields.push(item);
+      var array = _this.state.fields;
+      var index = array.findIndex(function (x) {
+        return x.id == id;
+      });
+      array.splice(index, 1);
       _this.setState({
         fields: array
       });
+    };
+
+    _this.handleAdd = function () {
+      var item = [{
+        id: (0, _v2.default)(),
+        value: ""
+      }];
+      var array = _this.state.fields.concat(item);
+      _this.setState({
+        fields: array
+      });
+    };
+
+    _this.handleUpdate = function (id, value) {
+      var array = _this.state.fields;
+      var index = array.findIndex(function (x) {
+        return x.id == id;
+      });
+      array[index].value = value;
+      _this.setState({
+        fields: array
+      });
+    };
+
+    _this.handleSubmit = function (e) {
+      e.preventDefault();
+      console.log(_this.state.fields);
     };
 
     _this.state = {
@@ -29501,21 +29522,31 @@ var StepFour = function (_React$Component) {
           'Add your own information'
         ),
         _react2.default.createElement(
-          'div',
-          { className: 'wizard-field' },
-          this.state.fields.map(function (item) {
-            return _react2.default.createElement(_dynamicFieldItem2.default, {
-              key: item.id,
-              id: item.id,
-              value: item.value,
-              handleRemove: _this2.handleRemove
-            });
-          })
-        ),
-        _react2.default.createElement(
-          'button',
-          { className: 'add-more', onClick: this.handleAdd },
-          'Add more'
+          'form',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            'div',
+            { className: 'wizard-field' },
+            this.state.fields.map(function (item) {
+              return _react2.default.createElement(_dynamicFieldItem2.default, {
+                key: item.id,
+                id: item.id,
+                value: item.value,
+                handleRemove: _this2.handleRemove,
+                handleUpdate: _this2.handleUpdate
+              });
+            })
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'add-more', onClick: this.handleAdd },
+            'Add more'
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'submit', onClick: this.handleSubmit },
+            'Submit'
+          )
         )
       );
     }
@@ -29555,9 +29586,19 @@ var DynamicFieldItem = function (_React$Component) {
   _inherits(DynamicFieldItem, _React$Component);
 
   function DynamicFieldItem() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, DynamicFieldItem);
 
-    return _possibleConstructorReturn(this, (DynamicFieldItem.__proto__ || Object.getPrototypeOf(DynamicFieldItem)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DynamicFieldItem.__proto__ || Object.getPrototypeOf(DynamicFieldItem)).call.apply(_ref, [this].concat(args))), _this), _this.handleValue = function () {
+      _this.props.handleUpdate(_this.props.id, _this.input.value);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(DynamicFieldItem, [{
@@ -29574,7 +29615,9 @@ var DynamicFieldItem = function (_React$Component) {
           ref: function ref(input) {
             return _this2.input = input;
           },
-          className: "form-control"
+          onBlur: this.handleValue,
+          className: "form-control",
+          placeholder: "Type here"
         }),
         _react2.default.createElement(
           "button",
