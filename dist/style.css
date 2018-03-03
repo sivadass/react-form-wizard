@@ -368,12 +368,16 @@ nav {
     background: #4099ff; }
 
 .dynamic-field-group {
-  display: flex; }
+  display: flex;
+  margin-bottom: 16px; }
   .dynamic-field-group .form-control {
     flex-grow: 1; }
+  .dynamic-field-group .form-control-selector {
+    margin-right: 16px; }
   .dynamic-field-group .remove {
     width: 48px;
     margin-left: 16px;
+    margin-bottom: 0;
     font-size: 22px;
     line-height: 42px; }
     .dynamic-field-group .remove:hover {

@@ -29585,44 +29585,142 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var DynamicFieldItem = function (_React$Component) {
   _inherits(DynamicFieldItem, _React$Component);
 
-  function DynamicFieldItem() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
+  function DynamicFieldItem(props) {
     _classCallCheck(this, DynamicFieldItem);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = _possibleConstructorReturn(this, (DynamicFieldItem.__proto__ || Object.getPrototypeOf(DynamicFieldItem)).call(this, props));
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DynamicFieldItem.__proto__ || Object.getPrototypeOf(DynamicFieldItem)).call.apply(_ref, [this].concat(args))), _this), _this.handleValue = function () {
+    _this.handleFormControlType = function (e) {
+      _this.setState({
+        formControlType: e.target.value
+      });
+    };
+
+    _this.handleValue = function () {
       _this.props.handleUpdate(_this.props.id, _this.input.value);
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    };
+
+    _this.state = {
+      formControlType: "input"
+    };
+    return _this;
   }
 
   _createClass(DynamicFieldItem, [{
-    key: "render",
-    value: function render() {
+    key: 'renderFormControl',
+    value: function renderFormControl(type) {
       var _this2 = this;
 
+      switch (type) {
+        case 'input':
+          return _react2.default.createElement('input', {
+            defaultValue: this.props.value,
+            type: 'text',
+            ref: function ref(input) {
+              return _this2.input = input;
+            },
+            onBlur: this.handleValue,
+            className: 'form-control',
+            placeholder: 'Type here'
+          });
+        case 'checkbox':
+          return _react2.default.createElement(
+            'div',
+            { className: 'option-type checkbox' },
+            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 1' }),
+            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 2' }),
+            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 3' })
+          );
+        case 'radio':
+          return _react2.default.createElement(
+            'div',
+            { className: 'option-type checkbox' },
+            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 1' }),
+            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 2' }),
+            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 3' })
+          );
+        case 'select':
+          return _react2.default.createElement(
+            'select',
+            {
+              className: 'form-control',
+              ref: function ref(input) {
+                return _this2.input = input;
+              },
+              onBlur: this.handleValue
+            },
+            _react2.default.createElement(
+              'option',
+              { value: 'male' },
+              'Male'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'female' },
+              'Female'
+            )
+          );
+        case 'textarea':
+          return _react2.default.createElement('textarea', {
+            className: 'form-control',
+            ref: function ref(input) {
+              return _this2.input = input;
+            },
+            onBlur: this.handleValue
+          });
+        default:
+          return _react2.default.createElement('input', {
+            defaultValue: this.props.value,
+            type: 'text',
+            ref: function ref(input) {
+              return _this2.input = input;
+            },
+            onBlur: this.handleValue,
+            className: 'form-control',
+            placeholder: 'Type here'
+          });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "dynamic-field-group" },
-        _react2.default.createElement("input", {
-          defaultValue: this.props.value,
-          type: "text",
-          ref: function ref(input) {
-            return _this2.input = input;
-          },
-          onBlur: this.handleValue,
-          className: "form-control",
-          placeholder: "Type here"
-        }),
+        'div',
+        { className: 'dynamic-field-group' },
         _react2.default.createElement(
-          "button",
-          { className: "remove", onClick: this.props.handleRemove.bind(this, this.props.id) },
-          "\xD7"
+          'select',
+          { className: 'form-control-selector', value: this.state.formControlType, onChange: this.handleFormControlType },
+          _react2.default.createElement(
+            'option',
+            { value: 'input' },
+            'Input'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'select' },
+            'Select'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'radio' },
+            'Radio'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'checkbox' },
+            'Checkbox'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'textarea' },
+            'Textarea'
+          )
+        ),
+        this.renderFormControl(this.state.formControlType),
+        _react2.default.createElement(
+          'button',
+          { className: 'remove', onClick: this.props.handleRemove.bind(this, this.props.id) },
+          '\xD7'
         )
       );
     }

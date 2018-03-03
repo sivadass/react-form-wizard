@@ -61,12 +61,17 @@ nav{
 // Dynamic form styles
 .dynamic-field-group{
   display: flex;
+  margin-bottom: 16px;
   .form-control{
     flex-grow: 1
+  }
+  .form-control-selector{
+    margin-right: 16px;
   }
   .remove{
     width: 48px;
     margin-left: 16px;
+    margin-bottom: 0;
     font-size: 22px;
     line-height: 42px;
     &:hover{
