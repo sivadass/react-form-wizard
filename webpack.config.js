@@ -42,10 +42,5 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('style.css'),
-  ],
-  devServer: {
-    contentBase: path.join(__dirname, "/"),
-    //compress: true,
-    port: 9000
-  }
+  ]
 };

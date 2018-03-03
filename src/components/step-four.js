@@ -2,21 +2,47 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Input from './form-controls/Input'
 
+const DynamicFieldItem = (props) => {
+  console.log(props);
+  return(
+    <div className="dynamic-field-item">
+      <Input defaultValue={props.value} type="text" placeholder="Total years of experience" />
+      <button className="remove">&times;</button>
+    </div>
+  )
+}
+
 class StepFour extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      fields: [
+        {
+          id: 1,
+          value: "Apple"
+        },
+        {
+          id: 2,
+          value: "Mango"
+        },
+        {
+          id: 3,
+          value: "Orange"
+        }
+      ]
+    }
+  }
+
   render(){
     return(
       <div className="wizard-container">
-        <h2 className="wizard-title">Your Location</h2>
+        <h2 className="wizard-title">Add your own information</h2>
         <div className="wizard-field">
-          <div style={{display: 'flex'}}>
-            <Input type="text" placeholder="Total years of experience" />
-            <button style={{width: '64px', fontSize: '20px'}} className="remove">&times;</button>
-          </div>
+          {this.state.fields.map((item) => {
+            return <DynamicFieldItem key={item.id} value={item.value}/>
+          })}
         </div>
-        <div className="wizard-navigation">
-          <Link to="/step-three" className="prev-step"><i className="material-icons">keyboard_arrow_left</i> Return Back</Link>
-          <Link to="/step-one" className="next-step">Proceed Next <i className="material-icons">keyboard_arrow_right</i></Link>
-        </div>
+        <button className="add-more">Add more</button>
       </div>
     )
   }

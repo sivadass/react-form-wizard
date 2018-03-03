@@ -57,3 +57,30 @@ nav{
     background: #4099ff;
   }
 }
+
+// Dynamic form styles
+.dynamic-field-item{
+  display: flex;
+  .form-group{
+    flex-grow: 1
+  }
+  .remove{
+    width: 48px;
+    margin-left: 16px;
+    font-size: 22px;
+    line-height: 42px;
+    &:hover{
+      background: indianred;
+      color: white;
+      border-color: transparent;
+    }
+  }
+}
+.add-more{
+  background: #4099ff;
+  color: #ffffff;
+  border-color: transparent;
+  &:hover{
+    background: darken($color: #4099ff, $amount: 10%)
+  }
+}

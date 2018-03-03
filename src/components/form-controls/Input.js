@@ -17,6 +17,7 @@ class Input extends React.Component {
       <div className="form-group">
         <input 
           type={this.props.type} 
+          defaultValue={this.props.defaultValue}
           onChange={this.handleChange.bind(this)}
           value={this.state.value}
           placeholder={this.props.placeholder}
