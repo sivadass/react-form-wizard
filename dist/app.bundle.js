@@ -29432,7 +29432,7 @@ var _dynamicFieldItem = __webpack_require__(278);
 
 var _dynamicFieldItem2 = _interopRequireDefault(_dynamicFieldItem);
 
-var _v = __webpack_require__(285);
+var _v = __webpack_require__(279);
 
 var _v2 = _interopRequireDefault(_v);
 
@@ -29647,7 +29647,8 @@ var DynamicFieldItem = function (_React$Component) {
               ref: function ref(input) {
                 return _this2.input = input;
               },
-              onBlur: this.handleValue
+              onBlur: this.handleValue,
+              defaultValue: this.props.value
             },
             _react2.default.createElement(
               'option',
@@ -29732,17 +29733,11 @@ var DynamicFieldItem = function (_React$Component) {
 exports.default = DynamicFieldItem;
 
 /***/ }),
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rng = __webpack_require__(286);
-var bytesToUuid = __webpack_require__(287);
+var rng = __webpack_require__(280);
+var bytesToUuid = __webpack_require__(281);
 
 // **`v1()` - Generate time-based UUID**
 //
@@ -29853,7 +29848,7 @@ module.exports = v1;
 
 
 /***/ }),
-/* 286 */
+/* 280 */
 /***/ (function(module, exports) {
 
 // Unique ID creation requires a high quality random # generator.  In the
@@ -29891,7 +29886,7 @@ if (getRandomValues) {
 
 
 /***/ }),
-/* 287 */
+/* 281 */
 /***/ (function(module, exports) {
 
 /**

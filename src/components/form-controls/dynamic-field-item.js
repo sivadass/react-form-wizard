@@ -50,6 +50,7 @@ class DynamicFieldItem extends React.Component {
             className="form-control"
             ref={(input) => this.input = input} 
             onBlur={this.handleValue}
+            defaultValue={this.props.value}
           >
             <option value="male">Male</option>
             <option value="female">Female</option>
