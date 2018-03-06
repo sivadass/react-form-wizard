@@ -39,9 +39,9 @@ class DynamicFieldItem extends React.Component {
       case 'radio':
         return (
           <div className="option-type checkbox">
-            <input type="text" className="form-control" placeholder="Option 1"/>
-            <input type="text" className="form-control" placeholder="Option 2"/>
-            <input type="text" className="form-control" placeholder="Option 3"/>
+            <input type="radio" name="gender" value="male" /> Male<br/>
+            <input type="radio" name="gender" value="female" /> Female<br/>
+            <input type="radio" name="gender" value="other" /> Other
           </div>
         )
       case 'select':

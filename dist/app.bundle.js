@@ -29635,9 +29635,14 @@ var DynamicFieldItem = function (_React$Component) {
           return _react2.default.createElement(
             'div',
             { className: 'option-type checkbox' },
-            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 1' }),
-            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 2' }),
-            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Option 3' })
+            _react2.default.createElement('input', { type: 'radio', name: 'gender', value: 'male' }),
+            ' Male',
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('input', { type: 'radio', name: 'gender', value: 'female' }),
+            ' Female',
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('input', { type: 'radio', name: 'gender', value: 'other' }),
+            ' Other'
           );
         case 'select':
           return _react2.default.createElement(
